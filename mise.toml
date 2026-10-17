@@ -1,0 +1,38 @@
+[tools]
+ruby = "4.0.5"
+node = "22.23.2"
+lefthook = "latest"
+
+[tasks.default]
+depends = ["dev"]
+
+[tasks.dev]
+depends = ["services"]
+run = "foreman start -f Procfile.dev"
+
+[tasks.services]
+run = "docker compose up -d pg"
+
+[tasks.stop]
+run = "docker compose stop"
+
+[tasks.setup]
+depends = ["services"]
+run = """
+bundle install
+npm install
+bin/rails db:prepare
+"""
+
+[tasks.spec]
+alias = "test"
+depends = ["services"]
+run = "bundle exec rspec $@"
+raw = true
+
+[tasks.lint]
+run = "bundle exec rubocop $@"
+
+[tasks.check]
+alias = "ci"
+depends = ["lint", "spec"]

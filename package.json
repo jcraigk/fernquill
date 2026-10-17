@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.4",
+    "vite-plugin-ruby": "^5.2.6"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo": "^8.0.23"
+  }
+}

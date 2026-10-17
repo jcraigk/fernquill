@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@source "../../views";
+@source "../../helpers";
+
+@theme {
+  --color-fern-50: #f3f7f0;
+  --color-fern-100: #e1ecd9;
+  --color-fern-500: #5b8a3c;
+  --color-fern-700: #3d5f28;
+  --color-fern-900: #22361a;
+  --color-paper: #fbf8f1;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}

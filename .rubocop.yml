@@ -1,0 +1,39 @@
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+plugins:
+  - rubocop-capybara
+  - rubocop-factory_bot
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-rspec_rails
+
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/*schema.rb
+    - node_modules/**/*
+    - vendor/**/*
+  NewCops: enable
+  TargetRubyVersion: 4.0.5
+
+FactoryBot/ExcessiveCreateList:
+  Enabled: false
+RSpec/ExampleLength:
+  Exclude:
+    - spec/features/**/*
+    - spec/requests/**/*
+  Max: 12
+RSpec/IndexedLet:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Exclude:
+    - spec/features/**/*
+    - spec/requests/**/*
+  Max: 9
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 4
+Style/HashSyntax:
+  EnforcedShorthandSyntax: always
